@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMARTPAY Online Banking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">
+      <div class="logo-icon">S</div>
+      <span>SMART<span>PAY</span></span>
+    </div>
+
+    <nav>
+      <a href="#" class="nav-item active" data-section="dashboard">
+        <span>⌂</span> Dashboard
+      </a>
+
+      <a href="#" class="nav-item" data-section="transfer">
+        <span>⇄</span> Transfer
+      </a>
+
+      <a href="#" class="nav-item" data-section="transactions">
+        <span>↕</span> Transactions
+      </a>
+
+      <a href="#" class="nav-item" data-section="cards">
+        <span>▣</span> Cards
+      </a>
+
+      <a href="#" class="nav-item" data-section="settings">
+        <span>⚙</span> Settings
+      </a>
+    </nav>
+
+    <button class="logout-btn" id="logoutBtn">
+      ⇥ Logout
+    </button>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <button class="menu-btn" id="menuBtn">☰</button>
+
+      <div>
+        <h2 id="pageTitle">Dashboard</h2>
+        <p class="welcome-text">Welcome back, Alex</p>
+      </div>
+
+      <div class="header-right">
+        <button class="notification">🔔</button>
+
+        <div class="profile">
+          <div class="avatar">A</div>
+          <div>
+            <strong>Alex Morgan</strong>
+            <small>Personal Account</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="section active-section">
+
+      <div class="balance-grid">
+
+        <div class="balance-card">
+          <div class="balance-top">
+            <span>Total Balance</span>
+            <button id="toggleBalance">👁</button>
+          </div>
+
+          <h1 id="balance">₦2,450,780.50</h1>
+
+          <div class="account-number">
+            <span>Account Number</span>
+            <strong>**** **** 4821</strong>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-icon green">↗</span>
+          <div>
+            <p>Income</p>
+            <h3>₦850,000</h3>
+            <small class="positive">+12.5%</small>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-icon red">↘</span>
+          <div>
+            <p>Expenses</p>
+            <h3>₦320,450</h3>
+            <small class="negative">-4.2%</small>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="section-heading">
+        <h2>Quick Actions</h2>
+      </div>
+
+      <div class="quick-actions">
+
+        <button class="action-card" data-action="transfer">
+          <div class="action-icon blue">⇄</div>
+          <span>Transfer Money</span>
+        </button>
+
+        <button class="action-card" data-action="deposit">
+          <div class="action-icon green">＋</div>
+          <span>Deposit</span>
+        </button>
+
+        <button class="action-card" data-action="withdraw">
+          <div class="action-icon orange">−</div>
+          <span>Withdraw</span>
+        </button>
+
+        <button class="action-card" data-action="cards">
+          <div class="action-icon purple">▣</div>
+          <span>My Cards</span>
+        </button>
+
+      </div>
+
+      <!-- Transactions -->
+      <div class="content-grid">
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Recent Transactions</h2>
+            <button class="view-all" data-section="transactions">
+              View All
+            </button>
+          </div>
+
+          <div id="transactionList">
+
+            <div class="transaction">
+              <div class="transaction-icon income">↓</div>
+              <div class="transaction-info">
+                <strong>Salary Payment</strong>
+                <small>Today • 09:45 AM</small>
+              </div>
+              <strong class="amount income-text">+₦450,000</strong>
+            </div>
+
+            <div class="transaction">
+              <div class="transaction-icon expense">↑</div>
+              <div class="transaction-info">
+                <strong>Electricity Bill</strong>
+                <small>Yesterday • 04:20 PM</small>
+              </div>
+              <strong class="amount expense-text">-₦35,500</strong>
+            </div>
+
+            <div class="transaction">
+              <div class="transaction-icon expense">↑</div>
+              <div class="transaction-info">
+                <strong>Online Shopping</strong>
+                <small>Sep 8 • 02:15 PM</small>
+              </div>
+              <strong class="amount expense-text">-₦24,800</strong>
+            </div>
+
+            <div class="transaction">
+              <div class="transaction-icon income">↓</div>
+              <div class="transaction-info">
+                <strong>Transfer from James</strong>
+                <small>Sep 7 • 11:30 AM</small>
+              </div>
+              <strong class="amount income-text">+₦85,000</strong>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Spending -->
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Monthly Spending</h2>
+            <select>
+              <option>September</option>
+              <option>August</option>
+              <option>July</option>
+            </select>
+          </div>
+
+          <div class="chart">
+            <div class="bar" style="height: 45%"><span>Mon</span></div>
+            <div class="bar" style="height: 65%"><span>Tue</span></div>
+            <div class="bar active-bar" style="height: 85%"><span>Wed</span></div>
+            <div class="bar" style="height: 55%"><span>Thu</span></div>
+            <div class="bar" style="height: 72%"><span>Fri</span></div>
+            <div class="bar" style="height: 35%"><span>Sat</span></div>
+            <div class="bar" style="height: 50%"><span>Sun</span></div>
+          </div>
+
+          <div class="spending-total">
+            <small>Total spent this month</small>
+            <strong>₦320,450</strong>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Transfer -->
+    <section id="transfer" class="section">
+
+      <div class="form-panel">
+        <h2>Transfer Money</h2>
+        <p>Send money to another SMARTPAY account.</p>
+
+        <form id="transferForm">
+
+          <label>Recipient Account Number</label>
+          <input
+            type="text"
+            id="recipient"
+            placeholder="Enter account number"
+            maxlength="10"
+            required
+          >
+
+          <label>Amount</label>
+          <div class="amount-input">
+            <span>₦</span>
+            <input
+              type="number"
+              id="transferAmount"
+              placeholder="0.00"
+              min="1"
+              required
+            >
+          </div>
+
+          <label>Description</label>
+          <textarea
+            id="description"
+            placeholder="What's this transfer for?"
+          ></textarea>
+
+          <button class="primary-btn" type="submit">
+            Continue Transfer
+          </button>
+
+        </form>
+      </div>
+
+    </section>
+
+    <!-- Transactions -->
+    <section id="transactions" class="section">
+
+      <div class="panel full-panel">
+
+        <div class="panel-header">
+          <h2>Transaction History</h2>
+
+          <input
+            class="search"
+            type="search"
+            id="searchTransaction"
+            placeholder="Search transactions..."
+          >
+        </div>
+
+        <div id="allTransactions">
+
+          <div class="transaction">
+            <div class="transaction-icon income">↓</div>
+            <div class="transaction-info">
+              <strong>Salary Payment</strong>
+              <small>September 10, 2026</small>
+            </div>
+            <strong class="amount income-text">+₦450,000</strong>
+          </div>
+
+          <div class="transaction">
+            <div class="transaction-icon expense">↑</div>
+            <div class="transaction-info">
+              <strong>Electricity Bill</strong>
+              <small>September 9, 2026</small>
+            </div>
+            <strong class="amount expense-text">-₦35,500</strong>
+          </div>
+
+          <div class="transaction">
+            <div class="transaction-icon expense">↑</div>
+            <div class="transaction-info">
+              <strong>Online Shopping</strong>
+              <small>September 8, 2026</small>
+            </div>
+            <strong class="amount expense-text">-₦24,800</strong>
+          </div>
+
+          <div class="transaction">
+            <div class="transaction-icon income">↓</div>
+            <div class="transaction-info">
+              <strong>Transfer from James</strong>
+              <small>September 7, 2026</small>
+            </div>
+            <strong class="amount income-text">+₦85,000</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Cards -->
+    <section id="cards" class="section">
+
+      <div class="cards-page">
+
+        <div class="bank-card">
+          <div class="card-brand">SMARTPAY</div>
+          <div class="chip">▦</div>
+
+          <div class="card-number">
+            5399&nbsp;&nbsp; 4821&nbsp;&nbsp; 7634&nbsp;&nbsp; 2910
+          </div>
+
+          <div class="card-bottom">
+            <div>
+              <small>Card Holder</small>
+              <strong>ALEX MORGAN</strong>
+            </div>
+
+            <div>
+              <small>Expires</small>
+              <strong>09/29</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-details">
+          <h2>My SMARTPAY Card</h2>
+          <p>Manage your virtual and physical cards.</p>
+
+          <button class="primary-btn">
+            + Request New Card
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Settings -->
+    <section id="settings" class="section">
+
+      <div class="form-panel">
+
+        <h2>Account Settings</h2>
+
+        <label>Full Name</label>
+        <input type="text" value="Alex Morgan">
+
+        <label>Email Address</label>
+        <input type="email" value="alex@example.com">
+
+        <label>Phone Number</label>
+        <input type="tel" value="+234 800 000 0000">
+
+        <button class="primary-btn" id="saveSettings">
+          Save Changes
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Transfer Modal -->
+  <div class="modal" id="successModal">
+
+    <div class="modal-content">
+
+      <div class="success-icon">✓</div>
+
+      <h2>Transfer Successful</h2>
+
+      <p id="successMessage">
+        Your transfer has been processed successfully.
+      </p>
+
+      <button class="primary-btn" id="closeModal">
+        Done
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
